@@ -1,4 +1,4 @@
-(ns part01.solution
+(ns day01.part01.solution
   (:require [clojure.test :refer :all]))
 
 (defn GetInput []
