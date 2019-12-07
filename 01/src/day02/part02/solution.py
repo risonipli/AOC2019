@@ -14,18 +14,12 @@ def set_inputs(noun, verb, program_codes):
     return program_copy
 
 def execute(program_codes):
-    skip_step = 0
-    for i in range(len(program_codes)):
-        if skip_step > 0:
-            skip_step -= 1
-            continue
+    for i in range(0, len(program_codes), 4):
         if program_codes[i] == 1:
             program_codes[program_codes[i+3]] = program_codes[program_codes[i+1]] + program_codes[program_codes[i+2]]
-            skip_step = 3
             continue
         if program_codes[i] == 2:
             program_codes[program_codes[i+3]] = program_codes[program_codes[i+1]] * program_codes[program_codes[i+2]]
-            skip_step = 3
             continue
         if program_codes[i] == 99:
                 return program_codes[0]
